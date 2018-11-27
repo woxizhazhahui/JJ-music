@@ -21,6 +21,10 @@
       dataNum: {
         type: Number,
         required: true
+      },
+      listenScroll: {
+        type: Boolean,
+        default: false
       }
   },
   mounted(){
@@ -36,11 +40,20 @@
           probeType: this.probeType,
           click: this.click
         })}
+        const self = this
+        if (this.listenScroll) {
+          this.scroller.on('scroll',pos =>{
+            self.$emit('scroll',pos)
+          })
+        }
       },
       _refresh(){
         if (this.scroller) {
           this.scroller.refresh()
         }
+      },
+      _scrollToEle() {
+        this.scroller.scrollToElement.apply(this.scroller,arguments)
       }
     },
     watch: {

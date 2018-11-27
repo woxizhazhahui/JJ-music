@@ -12,7 +12,9 @@
         </div>
         <div class="list-module">
         <h1 class="list-title">热门歌单推荐</h1>
-          <song-list @addDataNum="addDataNum()" v-if="listData.length" :listData="listData"></song-list>
+          <song-list @addDataNum="addDataNum()"
+                     v-if="listData.length"
+                     :listData="listData"></song-list>
           <div class="loading-box" v-show="!listData.length">
             <loading></loading>
           </div>

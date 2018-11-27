@@ -6,7 +6,7 @@
       <span class="next" @click="next()">下一页</span>
     </div>
     <div class="singer-list-box">
-      <singer-list v-if="list.length" :data="list" class="singer-list"></singer-list>
+      <singer-list v-if="list.length"  :data="list" class="singer-list"></singer-list>
       <loading v-show="!list.length"></loading>
     </div>
   </div>
